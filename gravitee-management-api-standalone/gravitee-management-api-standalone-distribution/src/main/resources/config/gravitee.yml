@@ -306,3 +306,20 @@ user:
 
 # The portal URL used in emails
 #portalURL: http://portal-url.net
+
+notifiers:
+  email:
+    enabled: true
+    subject: ${email.subject}
+    host: ${email.host}
+    port: ${email.port}
+    from: ${email.from}
+    username: ${email.username}
+    password: ${email.password}
+
+alerts:
+  vertx:
+    enabled: false
+    hazelcast:
+      config:
+        path: ${gravitee.home}/config/hazelcast.xml

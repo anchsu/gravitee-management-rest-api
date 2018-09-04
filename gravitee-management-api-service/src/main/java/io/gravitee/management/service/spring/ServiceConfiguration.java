@@ -24,6 +24,8 @@ import io.gravitee.definition.jackson.datatype.GraviteeMapper;
 import io.gravitee.management.fetcher.spring.FetcherConfigurationConfiguration;
 import io.gravitee.management.service.jackson.filter.ApiPermissionFilter;
 import io.gravitee.management.service.quality.ApiQualityMetricLoader;
+import io.gravitee.node.notifier.spring.NotifierPluginConfiguration;
+import io.gravitee.plugin.alert.spring.AlertPluginConfiguration;
 import io.gravitee.plugin.fetcher.spring.FetcherPluginConfiguration;
 import io.gravitee.plugin.policy.spring.PolicyPluginConfiguration;
 import io.gravitee.plugin.resource.spring.ResourcePluginConfiguration;
@@ -43,7 +45,8 @@ import java.util.Collections;
 @Configuration
 @ComponentScan("io.gravitee.management.service")
 @EnableTransactionManagement
-@Import({PolicyPluginConfiguration.class, ResourcePluginConfiguration.class, FetcherPluginConfiguration.class, FetcherConfigurationConfiguration.class})
+@Import({PolicyPluginConfiguration.class, ResourcePluginConfiguration.class, FetcherPluginConfiguration.class,
+		FetcherConfigurationConfiguration.class, NotifierPluginConfiguration.class, AlertPluginConfiguration.class})
 public class ServiceConfiguration {
 
 	@Bean
